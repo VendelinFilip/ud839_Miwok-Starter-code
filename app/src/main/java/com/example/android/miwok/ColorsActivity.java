@@ -89,4 +89,10 @@ private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.O
             mediaPlayer = null;
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
 }

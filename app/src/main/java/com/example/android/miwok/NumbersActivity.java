@@ -79,7 +79,6 @@ MediaPlayer mediaPlayer;
                     }
                 });
 
-
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
@@ -99,5 +98,11 @@ MediaPlayer mediaPlayer;
             // is not configured to play an audio file at the moment.
             mediaPlayer = null;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 }
